@@ -1,0 +1,25 @@
+$h1: #555;
+$background-color:#f8f9fa;
+
+* {
+    top: 0;
+}
+h1 {
+  color: $h1;
+  text-align: center;
+}
+
+
+body {
+    background-color: $background-color;
+}   
+
+
+
+.table td {
+    color:#333;
+    &:hover{
+        background-color:rgb(224, 220, 220);
+        cursor: pointer;
+    }
+}

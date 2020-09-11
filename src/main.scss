@@ -1,0 +1,29 @@
+$hover_color: red;
+
+
+.title {
+    margin:20px;
+    &:hover {
+        color:yellow;
+    }
+}
+.header-col {
+color: #555;
+}
+
+.select-menu {
+    background-color: #f8f9fa;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    width: 15%;
+    height: 20px;
+    &:hover {
+        color: #555;
+    }
+}
+.select-option{
+    &:hover {
+        background-color: #555;
+    }
+}
