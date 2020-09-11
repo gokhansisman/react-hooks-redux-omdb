@@ -1,8 +1,9 @@
 # react-hooks-redux-omdb
 
+# Installation
 
-# Get Started 
+> git clone https://github.com/gokhansisman/react-hooks-redux-omdb.git
 
-### npm install 
+> first command : npm install 
 
-### npm start 
+> second command : npm start 
