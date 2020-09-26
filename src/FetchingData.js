@@ -1,5 +1,5 @@
 import React, { useReducer, useEffect, useState } from 'react'
-import axios from 'axios'
+
 import { BootstrapTable, TableHeaderColumn } from 'react-bootstrap-table';
 import Pagination from '@material-ui/lab/Pagination';
 import { useSelector, useDispatch } from 'react-redux';
@@ -38,11 +38,10 @@ function FetchingData() {
     let newArray = []
     if (episodes != null) newArray = episodes.filter(episode => episode.Title.includes(searchEpisode))
     const classes = useStyles();
-    console.log(newArray)
 
     const options = {
         onRowClick: function (row) {
-            console.log(typeof row.imdbID);
+        
             if (typeof row.imdbID === 'string') {
                 history.push(`/details/${control}`)
                 setControl(row.imdbID)
@@ -68,7 +67,6 @@ function FetchingData() {
 
     if (typeof control === 'string') return <Redirect to={`/details/${control}`} />
 
-    console.log(value)
     return (
         <div className="main-container">
             <div className="main-header">
