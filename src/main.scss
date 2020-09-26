@@ -2,13 +2,18 @@ $hover_color: red;
 
 
 .title {
-    margin:20px;
+    margin: 20px;
+
     &:hover {
-        color:yellow;
+        color: yellow;
     }
 }
+
 .header-col {
-color: #555;
+    background-color: #f5f5f5;
+    font-size: 14px;
+    padding: 16px;
+
 }
 
 .select-menu {
@@ -18,12 +23,110 @@ color: #555;
     border-right: 0;
     width: 15%;
     height: 20px;
-    &:hover {
-        color: #555;
-    }
 }
-.select-option{
+
+.select-option {
     &:hover {
         background-color: #555;
+    }
+}
+
+.main-container {
+    width: 800px;
+    margin: auto;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: whitesmoke;
+    border:1px solid #009688;
+    //box-shadow: 0 2px 10px rgba(0,0,0,.2);
+    .main-header {
+        display: flex;
+        justify-content: flex-end;
+        background-color: rgb(0, 150, 136);
+    }
+    & .makeStyles-formControl-1 {
+    margin: 7px;
+    width: 320px;
+    }
+    & .header-inputs{
+        padding-top: 7px;
+        padding-bottom: 7px;
+        padding-right: 7px;
+    }
+    & .MuiInputBase-input {
+        color: #ccc;
+    }
+    & .MuiFormLabel-root.Mui-focused {
+        color: whitesmoke;
+    }
+    & .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+       border-color:white;
+       border: 0.5px solid white;
+    }
+
+    .table-container {
+        table {
+            border-collapse: collapse;
+            tr {
+                font-family: 'Ubuntu', sans-serif;
+                font-size: 14px;
+                background-color: #f5f5f5;
+                height: 30px;
+                opacity: 0.8;
+                &:hover {
+                    cursor: pointer;
+                    opacity: 1;
+                    font-weight: 700;
+                }
+                &:nth-child(2n) {
+                    background-color: white;
+
+                }
+                & th{
+                    
+                }
+            }
+        }
+    }
+}
+.series-header {
+    margin-left: 5px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+table.table.table-hover.table-bordered {
+    width: 100%;
+ 
+}
+
+.react-bs-table table td, .react-bs-table table th{
+    &:nth-child(1) {
+        width: 36%;
+        text-align: center !important;
+    }
+    &:nth-child(2) {
+        width: 17%;
+    }
+    &:nth-child(3) {
+        width: 17%
+    }
+    &:nth-child(4) {
+        width: 6%;
+    }
+}
+.react-bs-container-body .table td{
+    &:nth-child(1) {
+        width: 50%;
+    }
+    &:nth-child(2) {
+        width: 25%;
+    }
+    &:nth-child(3) {
+        width: 25%;
+    }
+    &:nth-child(4) {
+        width: 12%;
     }
 }

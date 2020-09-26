@@ -5,7 +5,7 @@ import './app.scss'
 function App() {
   return (
     <div >
-      <h1>Invent Analytics Front-end Developer Case Question</h1>
+      <h1 id="title">OMDB Movies</h1>
       <Routes />
     </div>
   );

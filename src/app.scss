@@ -1,25 +1,29 @@
-$h1: #555;
+$h1:#009688;
 $background-color:#f8f9fa;
 
 * {
     top: 0;
 }
-h1 {
-  color: $h1;
+#title {
+  color: #c4d2d0;
+  text-shadow: 1px -1px 1px white;
   text-align: center;
+  background: linear-gradient(to right, #009688, #06c5b4, #009688);
+  font-family: ubuntu;
+  font-size: 24px;
+  border: 2px solid #009688;
+  border-radius: 8px;
+  width: 790px;
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 10px 5px;
 }
 
 
 body {
+    background-image: url("./background.jpg");
+    background-repeat: repeat;
     background-color: $background-color;
 }   
 
-
-
-.table td {
-    color:#333;
-    &:hover{
-        background-color:rgb(224, 220, 220);
-        cursor: pointer;
-    }
-}
