@@ -1,9 +1,20 @@
-# react-hooks-redux-omdb
+# OMDb API
+**The Open Movie Database**
 
-# Installation
+The OMDb API is a RESTful web service to obtain movie information, all content and images on the site are contributed and maintained by our users.
+## Installation
 
-> git clone https://github.com/gokhansisman/react-hooks-redux-omdb.git
+Use the package manager [npm](https://www.npmjs.com/) to install dependencies.
 
-> first command : npm install 
+```bash
+npm install
+``` 
+Starting the project.
+```
+npm start
+```
 
-> second command : npm start 
+### Used tech
+> React (Redux&Hooks)
+
+### Go to [DEMO](https://floating-fjord-13251.herokuapp.com/)
