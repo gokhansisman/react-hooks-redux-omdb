@@ -1,13 +1,15 @@
-import React, { useReducer, useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 import { BootstrapTable, TableHeaderColumn } from 'react-bootstrap-table';
 import Pagination from '@material-ui/lab/Pagination';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetch_action, fetch_movies__year, fetch_series } from './store/actions/actions';
-import { Link, Redirect } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 import InputLabel from '@material-ui/core/InputLabel';
+import FormHelperText from '@material-ui/core/FormHelperText';
+import NativeSelect from '@material-ui/core/NativeSelect';
 import history from './history'
 import './main.scss'
 import { makeStyles } from '@material-ui/core/styles';
@@ -15,20 +17,20 @@ import TextField from '@material-ui/core/TextField';
 
 const useStyles = makeStyles((theme) => ({
     formControl: {
-      margin: theme.spacing(1),
-      minWidth: 120,
+        margin: theme.spacing(1),
+        minWidth: 120,
     },
     selectEmpty: {
-      marginTop: theme.spacing(2),
+        marginTop: theme.spacing(3),
     },
-  }));
+}));
 
 function FetchingData() {
     // const [state, dispatch] = useReducer(reducer, initialState)
     const [page, setPage] = useState(1);
     const [value, setValue] = useState('movie');
     const [search, setSearch] = useState('pokemon');
-    const { post, loading, totalResults, series_title, episodes, totalSeason, currentSeason } = useSelector(state => state.movie);
+    const { post, totalResults, series_title, episodes, totalSeason } = useSelector(state => state.movie);
     const [year, setYear] = useState('');
     const movieDispatch = useDispatch();
     const [control, setControl] = useState(23);
@@ -41,7 +43,7 @@ function FetchingData() {
 
     const options = {
         onRowClick: function (row) {
-        
+
             if (typeof row.imdbID === 'string') {
                 history.push(`/details/${control}`)
                 setControl(row.imdbID)
@@ -53,7 +55,7 @@ function FetchingData() {
 
         }
     };
-   
+
 
     useEffect(() => {
         movieDispatch(fetch_action(value, search, page));
@@ -68,7 +70,8 @@ function FetchingData() {
     if (typeof control === 'string') return <Redirect to={`/details/${control}`} />
 
     return (
-        <div className="main-container">
+
+        <div className="main-container">     
             <div className="main-header">
                 <FormControl id="select" variant="outlined" className={classes.formControl}>
                     <InputLabel htmlFor="outlined-age-native-simple">Category</InputLabel>
@@ -78,20 +81,11 @@ function FetchingData() {
                         onChange={e => setValue(e.target.value)}
                         label="Category"
                     >
-                        <option value="movie">Movie</option>
+                        <option aria-label="None" value="" />
+                        <option value="">Movie</option>
                         <option value="series">Series</option>
                     </Select>
                 </FormControl>
-                {/* <select
-                    className="select-menu"
-                    value={value}
-                    onChange={e => setValue(e.currentTarget.value)} >
-                    <option className="select-option" value="movie">
-                        Movie
-                </option>
-                    <option value="series">Series</option>
-                </select> */}
-
                 <span className="header-inputs"><TextField variant="outlined" style={{ paddingLeft: "3px" }} label="Title" placeholder="Movie,series.." onChange={e => setSearch(e.target.value)} /></span>
                 <span className="header-inputs"><TextField variant="outlined" style={{ paddingLeft: "3px" }} label="Year" placeholder="For movies only.." onChange={e => setYear(e.target.value)} /></span>
             </div>

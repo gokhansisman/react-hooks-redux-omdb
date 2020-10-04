@@ -1,4 +1,4 @@
-import React, { useReducer, useEffect, useState } from 'react'
+import React, {  useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux';
 import { getDetails__byID } from './store/actions/actions';
 import { makeStyles } from '@material-ui/core/styles';

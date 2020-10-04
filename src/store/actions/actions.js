@@ -35,7 +35,7 @@ export const fetch_movies__year = (search, page, year) => {
 
 export const fetch_series = (searchSeries, season) => {
     console.log(typeof searchSeries)
-    if(searchSeries=='') {
+    if(searchSeries==='') {
         searchSeries='Game of Thrones'
     }
     return dispatch => {
